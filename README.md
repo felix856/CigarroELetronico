@@ -6,6 +6,6 @@ registro do uso do cigarro- salvar a hora que está usando o cigarro
 selecionar o tipo de cigarro - boolean 1-normal 2-eletrônico   
 tela cadastro - O nome da pessoa,
 NAscimento, 
-Os cigarros que ela usa , marca,
+Os cigarros que ela usa , 
  idade que fuma
-HOje vc usou x vezes ao dia 
+HOje vc fumou x vezes ao dia 
