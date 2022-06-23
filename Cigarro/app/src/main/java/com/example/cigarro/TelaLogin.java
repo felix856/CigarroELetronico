@@ -15,8 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class TelaLogin extends AppCompatActivity {
     EditText login,senha;
+    static boolean fodinha;
+    static ArrayList<Usuario> users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,10 +56,7 @@ public class TelaLogin extends AppCompatActivity {
                  }
                 }
 
-                private void passarTela() {
-                 // Intent i = new Intent(this,Ocorrencias.class); //mudar para aperguntas motivacionais, 3 telas fragmentos
-                   // startActivity(i);
-                }
+
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
@@ -65,5 +66,13 @@ public class TelaLogin extends AppCompatActivity {
 
 
         }
+    }
+    private void passarTela() {
+        Intent i = new Intent(this,Ocorrencias.class); //mudar para aperguntas motivacionais, 3 telas fragmentos
+        startActivity(i);
+    }
+    public void irParaOlogin(View v){
+        Intent i = new Intent(this,TelaCadastro.class);
+        startActivity(i);
     }
 }
