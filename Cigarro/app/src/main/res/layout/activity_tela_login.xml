@@ -93,7 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/itim"
-        android:onClick="irParaOlogin"
+        android:onClick="irParaOCadastro"
         android:text="Cadastre-se"
         android:textColor="@color/branco"
         android:textSize="34sp"

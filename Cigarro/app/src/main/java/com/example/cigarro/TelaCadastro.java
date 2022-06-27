@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class TelaCadastro extends AppCompatActivity {
     EditText login,senha,idade,anosDeFumo;
     EditText cigarroCadastro, vaperCadastro;
-    boolean fodinha = false;
+
     ArrayList<Usuario> users = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class TelaCadastro extends AppCompatActivity {
         int cigarro = Integer.parseInt(cigarroCadastro.getText().toString());
         int vaper = Integer.parseInt(vaperCadastro.getText().toString());
 
-        if(log.equals("") || sen.equals("") || ida == 0 || adf == 0 || cigarro == 0|| vaper == 0){
+        if(log.equals("") || sen.equals("") || ida == 0 || adf == 0){
             print("Selecione tudo");
         }
         else{
@@ -75,8 +75,6 @@ public class TelaCadastro extends AppCompatActivity {
             novoUsuario.salvarBD();
             print("Usuario criado");
 
-            TelaLogin.fodinha = fodinha;
-            TelaLogin.users = users;
             irParaOLogin();
         }
     }
@@ -93,7 +91,7 @@ public class TelaCadastro extends AppCompatActivity {
                 for(DataSnapshot d : snapshot.getChildren()){
                     Usuario u = d.getValue(Usuario.class);
                     users.add(u);
-                    fodinha = true;
+
                 }
             }
 

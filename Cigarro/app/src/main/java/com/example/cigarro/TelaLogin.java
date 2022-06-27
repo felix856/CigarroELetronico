@@ -18,9 +18,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class TelaLogin extends AppCompatActivity {
+
     EditText login,senha;
-    static boolean fodinha;
-    static ArrayList<Usuario> users;
+    ArrayList<Usuario> users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +28,15 @@ public class TelaLogin extends AppCompatActivity {
         getSupportActionBar().hide();
         login = findViewById(R.id.login);
         senha = findViewById(R.id.senha);
+
+
     }
+
     public void print(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
+
+
     public void loginMassa(View v){
 
         String log = login.getText().toString();
@@ -39,40 +44,39 @@ public class TelaLogin extends AppCompatActivity {
         if(log.equals("") || sen.equals("")){
             Toast.makeText( this,"Pre encha os campos", Toast.LENGTH_SHORT).show();
         }else{
+
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Usuario");
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    boolean aux = false;
-                 for(DataSnapshot d : snapshot.getChildren()){
-                     Usuario u = d.getValue(Usuario.class);
-                     if(u.getLogin().equals(log) && u.getSenha().equals(sen)){
-                        passarTela();
-                        aux = true;
-                     }
-                 }
-                 if(!aux){
-                     print("Seu login ou motivação não foram digitados corretamente");
-                 }
+                    boolean passou = false;
+                    for(DataSnapshot d : snapshot.getChildren()){
+                        Usuario u = d.getValue(Usuario.class);
+                        if(u.getLogin().equals(log) && u.getSenha().equals(sen)){
+
+                            passarTela();
+                            passou = true;
+                        }
+                    }
+                    if(!passou){
+                        print("Login ou senha wrong");
+                    }
                 }
-
-
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
 
                 }
             });
-
-
         }
     }
     private void passarTela() {
         Intent i = new Intent(this,Ocorrencias.class); //mudar para aperguntas motivacionais, 3 telas fragmentos
         startActivity(i);
     }
-    public void irParaOlogin(View v){
+    public void irParaOCadastro(View v){
         Intent i = new Intent(this,TelaCadastro.class);
         startActivity(i);
+
     }
 }
