@@ -11,9 +11,10 @@
         android:id="@+id/imageView12"
         android:layout_width="225dp"
         android:layout_height="324dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
         app:layout_constraintVertical_bias="0.135"
@@ -23,9 +24,10 @@
         android:id="@+id/imageView17"
         android:layout_width="225dp"
         android:layout_height="324dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
         app:layout_constraintVertical_bias="0.132"
@@ -48,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/itim"
-        android:text="Fumou hoje?"
+        android:text="Você está bem?"
         android:textAlignment="center"
         android:textColor="@color/branco"
         android:textSize="96sp"
@@ -57,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/cigarrete"
         android:layout_width="52dp"
         android:layout_height="59dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView11"
@@ -88,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/cigarrete"
         app:layout_constraintVertical_bias="0.4"
         app:srcCompat="@drawable/ratungulo" />
 
@@ -106,8 +108,8 @@
 
     <ImageView
         android:id="@+id/imageView16"
-        android:layout_width="365dp"
-        android:layout_height="319dp"
+        android:layout_width="351dp"
+        android:layout_height="309dp"
         android:layout_marginBottom="-180dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,17 +120,50 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="138dp"
         android:fontFamily="@font/itim"
-        android:text="Fumei isso"
+        android:text="Acalme-se  e  Viva"
         android:textAlignment="center"
         android:textColor="@color/branco"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView16"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="@+id/imageView16"
         app:layout_constraintTop_toTopOf="@+id/imageView16"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintVertical_bias="0.733" />
+
+    <EditText
+        android:id="@+id/cigarroOcorrencias"
+        android:layout_width="178dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView14"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/vaperOcorrencias"
+        android:layout_width="178dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="number"
+        android:rotationX="0"
+        android:textAlignment="center"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+        app:layout_constraintEnd_toEndOf="@+id/imageView17"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="@+id/imageView17"
+        app:layout_constraintTop_toTopOf="@+id/imageView18"
+        app:layout_constraintVertical_bias="0.49"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cigarro">
         <activity
+            android:name=".TelaStatus"
+            android:exported="false" />
+        <activity
             android:name=".Ocorrencias"
             android:exported="false" />
         <activity

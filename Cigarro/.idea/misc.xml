@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/lara_r_oliveira/Documents/Cigarro/app/src/main/res/layout/activity_tela_login.xml" value="0.19" />
-        <entry key="..\:/Users/lucas_g_flores/Desktop/CigarroELetronico/Cigarro/app/src/main/res/layout/activity_ocorrencias.xml" value="0.22" />
+        <entry key="..\:/Users/lucas_g_flores/Desktop/CigarroELetronico/Cigarro/app/src/main/res/layout/activity_ocorrencias.xml" value="0.1" />
         <entry key="..\:/Users/lucas_g_flores/Desktop/CigarroELetronico/Cigarro/app/src/main/res/layout/activity_tela_cadastro.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/lucas_g_flores/Desktop/CigarroELetronico/Cigarro/app/src/main/res/layout/activity_tela_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lucas_g_flores/Desktop/CigarroELetronico/Cigarro/app/src/main/res/layout/activity_tela_status.xml" value="0.25" />
       </map>
     </option>
   </component>
