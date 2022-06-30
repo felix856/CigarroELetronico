@@ -6,12 +6,12 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Usuario {
     String login,senha;
     int tempoDeFumante,idade;
-    int cigarro_usados,vaper_usados;
+    boolean cigarro_usados,vaper_usados;
 
     public Usuario() {
     }
 
-    public Usuario(String login, String senha, int tempoDeFumante, int idade, int cigarro_usados, int vaper_usados) {
+    public Usuario(String login, String senha, int tempoDeFumante, int idade, boolean cigarro_usados, boolean vaper_usados) {
         this.login = login;
         this.senha = senha;
         this.tempoDeFumante = tempoDeFumante;
@@ -52,19 +52,19 @@ public class Usuario {
         this.idade = idade;
     }
 
-    public int getCigarro_usados() {
+    public boolean isCigarro_usados() {
         return cigarro_usados;
     }
 
-    public void setCigarro_usados(int cigarro_usados) {
+    public void setCigarro_usados(boolean cigarro_usados) {
         this.cigarro_usados = cigarro_usados;
     }
 
-    public int getVaper_usados() {
+    public boolean isVaper_usados() {
         return vaper_usados;
     }
 
-    public void setVaper_usados(int vaper_usados) {
+    public void setVaper_usados(boolean vaper_usados) {
         this.vaper_usados = vaper_usados;
     }
 
