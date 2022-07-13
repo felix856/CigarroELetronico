@@ -3,11 +3,13 @@ package com.example.cigarro;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.LocalDateTime;
+
 public class Usuario {
     String login,senha;
     int tempoDeFumante,idade;
     boolean cigarro_usados,vaper_usados;
-
+    LocalDateTime data;
     public Usuario() {
     }
 
@@ -18,6 +20,24 @@ public class Usuario {
         this.idade = idade;
         this.cigarro_usados = cigarro_usados;
         this.vaper_usados = vaper_usados;
+    }
+
+    public Usuario(String login, String senha, int tempoDeFumante, int idade, boolean cigarro_usados, boolean vaper_usados, LocalDateTime data) {
+        this.login = login;
+        this.senha = senha;
+        this.tempoDeFumante = tempoDeFumante;
+        this.idade = idade;
+        this.cigarro_usados = cigarro_usados;
+        this.vaper_usados = vaper_usados;
+        this.data = data;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.data = data;
     }
 
     public String getLogin() {

@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.lang.ref.Reference;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class TelaCadastro extends AppCompatActivity {
@@ -64,7 +65,7 @@ public class TelaCadastro extends AppCompatActivity {
             idade.setText("");
             anosDeFumo.setText("");
             if (users.isEmpty()) {
-                Usuario novoUsuario = new Usuario(log, sen, adf, ida, cigarroCadastro.getVisibility() == View.VISIBLE, vaperCadastro.getVisibility() == View.VISIBLE);
+                Usuario novoUsuario = new Usuario(log, sen, adf, ida, cigarroCadastro.getVisibility() == View.VISIBLE, vaperCadastro.getVisibility() == View.VISIBLE, LocalDateTime.now());
                 novoUsuario.salvarBD();
             } else {
                 for (Usuario u : users) {
@@ -75,7 +76,7 @@ public class TelaCadastro extends AppCompatActivity {
                 if (existe) {
                     Toast.makeText(this, "Usuario já existe", Toast.LENGTH_LONG).show();
                 } else if (!existe) {
-                    Usuario novoUsuario = new Usuario(log, sen, adf, ida, cigarroCadastro.getVisibility() == View.VISIBLE, vaperCadastro.getVisibility() == View.VISIBLE);
+                    Usuario novoUsuario = new Usuario(log, sen, adf, ida, cigarroCadastro.getVisibility() == View.VISIBLE, vaperCadastro.getVisibility() == View.VISIBLE,LocalDateTime.now());
                     novoUsuario.salvarBD();
                     print("Usuario criado");
 
@@ -84,20 +85,23 @@ public class TelaCadastro extends AppCompatActivity {
             }
         }
     }
-    public void botaoMudaCigas(View v){
-        if(cigarroCadastro.getVisibility() == View.INVISIBLE) {
+
+    public void botaoMudaCigas(View v) {
+        if (cigarroCadastro.getVisibility() == View.INVISIBLE) {
             cigarroCadastro.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             cigarroCadastro.setVisibility(View.INVISIBLE);
         }
     }
-    public void botaoMudaVaper(View v){
-        if(vaperCadastro.getVisibility() == View.INVISIBLE) {
+
+    public void botaoMudaVaper(View v) {
+        if (vaperCadastro.getVisibility() == View.INVISIBLE) {
             vaperCadastro.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             vaperCadastro.setVisibility(View.INVISIBLE);
         }
     }
+
     public void listaDeUsers() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Usuario");
         ref.addValueEventListener(new ValueEventListener() {
