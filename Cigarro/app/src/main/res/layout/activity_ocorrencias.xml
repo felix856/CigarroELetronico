@@ -123,16 +123,17 @@
         android:layout_width="230dp"
         android:layout_height="138dp"
         android:fontFamily="@font/itim"
-        android:text="Acalme-se  e  Viva"
+        android:onClick="botao"
+        android:text="Fica de Boa"
         android:textAlignment="center"
         android:textColor="@color/branco"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView16"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="@+id/imageView16"
         app:layout_constraintTop_toTopOf="@+id/imageView16"
-        app:layout_constraintVertical_bias="0.733" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/cigarroOcorrencias"

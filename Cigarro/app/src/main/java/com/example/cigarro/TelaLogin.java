@@ -53,7 +53,7 @@ public class TelaLogin extends AppCompatActivity {
                     for(DataSnapshot d : snapshot.getChildren()){
                         Usuario u = d.getValue(Usuario.class);
                         if(u.getLogin().equals(log) && u.getSenha().equals(sen)){
-
+                            TelaStatus.u = u;
                             passarTela();
                             passou = true;
                         }

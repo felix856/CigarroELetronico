@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cigarro">
         <activity
-            android:name=".consequenciasDoCigas"
+            android:name=".Economiza"
+            android:exported="false" />
+        <activity
+            android:name=".CentroDasCoisas"
+            android:exported="false" />
+        <activity
+            android:name=".ConsequenciasDoCigas"
             android:exported="false" />
         <activity
             android:name=".Inspiracao"
@@ -28,8 +34,15 @@
             android:name=".TelaLogin"
             android:exported="false" />
         <activity
+            android:name=".Meditacao"
+            android:exported="false" />
+        <activity
+            android:name=".RecuperacaoDoCigas"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

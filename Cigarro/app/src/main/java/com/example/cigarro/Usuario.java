@@ -9,7 +9,9 @@ public class Usuario {
     String login,senha;
     int tempoDeFumante,idade;
     boolean cigarro_usados,vaper_usados;
-    LocalDateTime data;
+    int ultimoDia;
+    int diasSemFumar;
+    int ultimoAno;
     public Usuario() {
     }
 
@@ -20,24 +22,31 @@ public class Usuario {
         this.idade = idade;
         this.cigarro_usados = cigarro_usados;
         this.vaper_usados = vaper_usados;
+
     }
 
-    public Usuario(String login, String senha, int tempoDeFumante, int idade, boolean cigarro_usados, boolean vaper_usados, LocalDateTime data) {
-        this.login = login;
-        this.senha = senha;
-        this.tempoDeFumante = tempoDeFumante;
-        this.idade = idade;
-        this.cigarro_usados = cigarro_usados;
-        this.vaper_usados = vaper_usados;
-        this.data = data;
+    public int getUltimoDia() {
+        return ultimoDia;
     }
 
-    public LocalDateTime getData() {
-        return data;
+    public void setUltimoDia(int ultimoDia) {
+        this.ultimoDia = ultimoDia;
     }
 
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public int getDiasSemFumar() {
+        return diasSemFumar;
+    }
+
+    public void setDiasSemFumar(int diasSemFumar) {
+        this.diasSemFumar = diasSemFumar;
+    }
+
+    public int getUltimoAno() {
+        return ultimoAno;
+    }
+
+    public void setUltimoAno(int ultimoAno) {
+        this.ultimoAno = ultimoAno;
     }
 
     public String getLogin() {

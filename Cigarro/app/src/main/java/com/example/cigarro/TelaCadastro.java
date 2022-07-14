@@ -32,6 +32,10 @@ public class TelaCadastro extends AppCompatActivity {
         setContentView(R.layout.activity_tela_cadastro);
         getSupportActionBar().hide();
         listaDeUsers();
+        for(Usuario i : users){
+            print(i+"");
+
+        }
 
         login = findViewById(R.id.loginCadastro);
         senha = findViewById(R.id.senhaCadastro);
@@ -50,10 +54,12 @@ public class TelaCadastro extends AppCompatActivity {
     }
 
     public void cadastrar(View v) {
+        try {
         String log = login.getText().toString();
         String sen = senha.getText().toString();
-        int ida = Integer.parseInt(idade.getText().toString());
-        int adf = Integer.parseInt(anosDeFumo.getText().toString());
+
+            int ida = Integer.parseInt(idade.getText().toString());
+            int adf = Integer.parseInt(anosDeFumo.getText().toString());
 
         if (log.equals("") || sen.equals("") || ida == 0 || adf == 0) {
             print("Selecione tudo");
@@ -65,7 +71,7 @@ public class TelaCadastro extends AppCompatActivity {
             idade.setText("");
             anosDeFumo.setText("");
             if (users.isEmpty()) {
-                Usuario novoUsuario = new Usuario(log, sen, adf, ida, cigarroCadastro.getVisibility() == View.VISIBLE, vaperCadastro.getVisibility() == View.VISIBLE, LocalDateTime.now());
+                Usuario novoUsuario = new Usuario(log, sen, adf, ida, cigarroCadastro.getVisibility() == View.VISIBLE, vaperCadastro.getVisibility() == View.VISIBLE);
                 novoUsuario.salvarBD();
             } else {
                 for (Usuario u : users) {
@@ -76,13 +82,20 @@ public class TelaCadastro extends AppCompatActivity {
                 if (existe) {
                     Toast.makeText(this, "Usuario já existe", Toast.LENGTH_LONG).show();
                 } else if (!existe) {
-                    Usuario novoUsuario = new Usuario(log, sen, adf, ida, cigarroCadastro.getVisibility() == View.VISIBLE, vaperCadastro.getVisibility() == View.VISIBLE,LocalDateTime.now());
+                    Usuario novoUsuario = new Usuario(log, sen, adf, ida, cigarroCadastro.getVisibility() == View.VISIBLE, vaperCadastro.getVisibility() == View.VISIBLE);
+                    int ultimoDia = LocalDateTime.now().getDayOfYear();
+                    int ultimoAno = LocalDateTime.now().getYear();
+                    novoUsuario.setUltimoAno(ultimoAno);
+                    novoUsuario.setUltimoDia(ultimoDia);
                     novoUsuario.salvarBD();
                     print("Usuario criado");
 
                     irParaOLogin();
                 }
             }
+        }
+        }catch (Exception e){
+            print("Mano se digitou algo errado");
         }
     }
 

@@ -6,19 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Ocorrencias extends AppCompatActivity {
+public class ConsequenciasDoCigas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ocorrencias);
+        setContentView(R.layout.activity_consequencias_do_cigas);
     }
-    public void botao(View v){
-        passarTela();
-    }
-    public void passarTela(){
-        Intent i = new Intent(this,TelaStatus.class);
+    public void voltarTela(View v){
+        Intent i = new Intent(this,Inspiracao.class);
         startActivity(i);
+
     }
 }
