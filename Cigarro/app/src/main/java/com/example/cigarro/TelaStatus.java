@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 public class TelaStatus extends AppCompatActivity {
 
-    public static Usuario u;
+    static Usuario u;
     TextView tempo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class TelaStatus extends AppCompatActivity {
         int diasSemFumo = dias+ano*365;
         tempo.setText(diasSemFumo+"");
         RecuperacaoDoCigas.dias = diasSemFumo;
+        Economiza.dias = diasSemFumo;
     }
     public void botao(View v){
         passarTela();

@@ -54,6 +54,7 @@ public class TelaLogin extends AppCompatActivity {
                         Usuario u = d.getValue(Usuario.class);
                         if(u.getLogin().equals(log) && u.getSenha().equals(sen)){
                             TelaStatus.u = u;
+                            Economiza.u = u;
                             passarTela();
                             passou = true;
                         }

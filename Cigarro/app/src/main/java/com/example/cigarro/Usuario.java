@@ -12,17 +12,26 @@ public class Usuario {
     int ultimoDia;
     int diasSemFumar;
     int ultimoAno;
+    int custoDiarioDoCigas;
     public Usuario() {
     }
 
-    public Usuario(String login, String senha, int tempoDeFumante, int idade, boolean cigarro_usados, boolean vaper_usados) {
+    public Usuario(String login, String senha, int tempoDeFumante, int idade, boolean cigarro_usados, boolean vaper_usados,int custoDiarioDoCigas) {
         this.login = login;
         this.senha = senha;
         this.tempoDeFumante = tempoDeFumante;
         this.idade = idade;
         this.cigarro_usados = cigarro_usados;
         this.vaper_usados = vaper_usados;
+        this.custoDiarioDoCigas = custoDiarioDoCigas;
+    }
 
+    public int getCustoDiarioDoCigas() {
+        return custoDiarioDoCigas;
+    }
+
+    public void setCustoDiarioDoCigas(int custoDiarioDoCigas) {
+        this.custoDiarioDoCigas = custoDiarioDoCigas;
     }
 
     public int getUltimoDia() {
