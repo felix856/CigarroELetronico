@@ -12,6 +12,7 @@ public class ConsequenciasDoCigas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consequencias_do_cigas);
+        getSupportActionBar().hide();
     }
     public void voltarTela(View v){
         Intent i = new Intent(this,Inspiracao.class);

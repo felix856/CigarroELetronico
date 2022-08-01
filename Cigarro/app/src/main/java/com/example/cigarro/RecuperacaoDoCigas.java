@@ -2,7 +2,9 @@ package com.example.cigarro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class RecuperacaoDoCigas extends AppCompatActivity {
@@ -40,5 +42,8 @@ public class RecuperacaoDoCigas extends AppCompatActivity {
         if (dias >= 5475) {
             e5.setTextColor(getResources().getColor(R.color.verdinhoMaisClaro));
         }
+    }
+    public void voltar(View v){
+        Intent i = new Intent(this, Inspiracao.class); startActivity(i);
     }
 }

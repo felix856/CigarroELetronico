@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class TelaLogin extends AppCompatActivity {
 
     EditText login,senha;
-    ArrayList<Usuario> users;
+    //ArrayList<Usuario> users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +53,7 @@ public class TelaLogin extends AppCompatActivity {
                     for(DataSnapshot d : snapshot.getChildren()){
                         Usuario u = d.getValue(Usuario.class);
                         if(u.getLogin().equals(log) && u.getSenha().equals(sen)){
+                          //  print(u.getUltimoDia()+"");
                             TelaStatus.u = u;
                             Economiza.u = u;
                             passarTela();
@@ -71,6 +72,7 @@ public class TelaLogin extends AppCompatActivity {
             });
         }
     }
+
     private void passarTela() {
         Intent i = new Intent(this,Ocorrencias.class); //mudar para aperguntas motivacionais, 3 telas fragmentos
         startActivity(i);
@@ -80,4 +82,5 @@ public class TelaLogin extends AppCompatActivity {
         startActivity(i);
 
     }
+
 }
